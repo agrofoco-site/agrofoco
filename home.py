@@ -56,22 +56,22 @@ def app():
     # SOBRE NÓS com ícone
     # Missão
     st.markdown("<h2>🏢 Sobre Nós</h2>", unsafe_allow_html=True)
-    st.markdown("<h2 style='font-weight: 350; font-size: 34px;'>A AgroFoco oferece soluções gerenciais personalizadas para associações e produtores integrados, com foco em eficiência, sustentabilidade e fortalecimento da cadeia produtiva.</h2>", unsafe_allow_html=True)
+    st.markdown("<h3 style='font-weight: 300; font-size: 34px;'>A AgroFoco oferece soluções gerenciais personalizadas para associações e produtores integrados, com foco em eficiência, sustentabilidade e fortalecimento da cadeia produtiva.</h3>", unsafe_allow_html=True)
   
 
     # Missão
     st.markdown("<h2>🎯 Missão</h2>", unsafe_allow_html=True)
-    st.markdown("<h2 style='font-weight: 350; font-size: 34px;'>Levar inteligência para o campo com compromisso com o resultado.</h2>", unsafe_allow_html=True)
+    st.markdown("<h3 style='font-weight: 300; font-size: 34px;'>Levar inteligência para o campo com compromisso com o resultado.</h3>", unsafe_allow_html=True)
 
     # Visão
     st.markdown("<h2>👀 Visão</h2>", unsafe_allow_html=True)
-    st.markdown("<h2 style='font-weight: 350; font-size: 34px;'>Ser referência nacional em tecnologia aplicada ao agronegócio.</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='font-weight: 300; font-size: 34px;'>Ser referência nacional em tecnologia aplicada ao agronegócio.</h2>", unsafe_allow_html=True)
 
     # Valores
     st.markdown("<h2>🧭 Valores</h2>", unsafe_allow_html=True)
-    st.markdown("<h2 style='font-weight: 350; font-size: 34px;'>Inovação, Comprometimento, Sustentabilidade, Ética e Resultado.</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='font-weight: 300; font-size: 34px;'>Inovação, Comprometimento, Sustentabilidade, Ética e Resultado.</h2>", unsafe_allow_html=True)
 
    #  Experiência
     st.markdown("<h2>🧭 Experiência</h2>", unsafe_allow_html=True)
-    st.markdown("<h2 style='font-weight: 350; font-size: 34px;'>Mais de 15 anos levando tecnologia ao campo brasileiro.</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='font-weight: 300; font-size: 34px;'>Mais de 15 anos levando tecnologia ao campo brasileiro.</h2>", unsafe_allow_html=True)
 
