@@ -14,17 +14,34 @@ st.sidebar.image(logo, width=150)
 
 # ─── Menu lateral ──────────────────────────────────────────────────
 menu = st.sidebar.radio(
-    "MENU",[
+    "MENU", [
         "AgroFoco",
-        "Cáculo - Peso a Menor"],
+        "Cálculo - Aloj. a Menor",
+        "Cálculo - Peso a Menor",
+        "Cálculo - Acerto de RIPI's",
+        "Cálculo - Mortalidade",
+        "Cálculo - Viabilidade Econômica",
+        "Cálculo - Desempenho Geral"
+    ],
     key="main_menu"
 )
 
 # ─── Importa o módulo correto conforme a escolha ──────────────────
 if menu == "AgroFoco":
-    import home as modulo  # ✅ nome novo aplicado aqui
-elif menu == "Cáculo - Peso a Menor":
-    import simulador_peso_menor as modulo  # ✅ nome correto com underline
+    import home as modulo
+elif menu == "Cálculo - Aloj. a Menor":
+    import simulador_alojamento_menor as modulo
+elif menu == "Cálculo - Peso a Menor":
+    import simulador_peso_menor as modulo
+elif menu == "Cálculo - Acerto de RIPI's":
+    import simulador_ripi as modulo
+elif menu == "Cálculo - Mortalidade":
+    import simulador_mortalidade as modulo
+elif menu == "Cálculo - Viabilidade Econômica":
+    import simulador_viabilidade as modulo
+elif menu == "Cálculo - Desempenho Geral":
+    import simulador_desempenho as modulo
 
 # ─── Executa o app da página selecionada ──────────────────────────
 modulo.app()
+
