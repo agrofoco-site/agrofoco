@@ -51,7 +51,7 @@ def app():
     )
 
     # Título inicial
-    st.markdown("<h1>Bem-vindo à AgroFoco</h1>", unsafe_allow_html=True)
+    #st.markdown("<h1>Bem-vindo à AgroFoco</h1>", unsafe_allow_html=True)
 
     # SOBRE NÓS com ícone
     # Missão
