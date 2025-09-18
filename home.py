@@ -1,4 +1,6 @@
 # home.py
+# Tela inicial pública da AgroFoco
+
 import streamlit as st
 import base64
 
@@ -8,46 +10,68 @@ def get_base64_of_bin_file(bin_file):
     return base64.b64encode(data).decode()
 
 def app():
-    # ✅ fundo direto na raiz
+    # Define fundo visual com imagem fundo.png
     background_image = get_base64_of_bin_file("fundo.png")
-
-    # CSS para aplicar como fundo de tela
     st.markdown(
         f"""
         <style>
         .stApp {{
-            background: linear-gradient(rgba(0,0,0.0), rgba(0,0,0,0)),
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                         url("data:image/png;base64,{background_image}");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            color: #4CA5BB;
-        }}
-
-        h1, h2, h3, h4, h5, h6 {{
             color: white;
         }}
 
+        h1, h2, h3, h4 {{
+            color: white;
+        }}
+
+        h2 {{
+            font-size: 34px !important;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }}
+
+        .material-icons {{
+            vertical-align: middle;
+            font-size: 34px;
+            margin-right: 0.4rem;
+        }}
+
         .block-container {{
-            padding-top: 3rem;
+            padding-top: 4rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
         }}
         </style>
         """,
         unsafe_allow_html=True
     )
 
-    # Conteúdo da página
-    st.markdown("## Sobre Nós")
-    st.write("A AgroFoco oferece soluções gerenciais personalizadas para associações e produtores integrados, com foco em eficiência, sustentabilidade e fortalecimento da cadeia produtiva.")
+    # Título inicial
+    st.markdown("<h1>Bem-vindo à AgroFoco</h1>", unsafe_allow_html=True)
 
-    st.markdown("## Missão")
-    st.write("Levar inteligência para o campo com compromisso com o resultado.")
+    # SOBRE NÓS com ícone
+    # Missão
+    st.markdown("<h2>🏢 Sobre Nós</h2>", unsafe_allow_html=True)
+    st.markdown("<h3 style='font-weight: 350; font-size: 34px;'>A AgroFoco oferece soluções gerenciais personalizadas para associações e produtores integrados, com foco em eficiência, sustentabilidade e fortalecimento da cadeia produtiva.</h3>", unsafe_allow_html=True)
+  
 
-    st.markdown("## Visão")
-    st.write("Ser referência nacional em tecnologia aplicada ao agronegócio.")
+    # Missão
+    st.markdown("<h2>🎯 Missão</h2>", unsafe_allow_html=True)
+    st.markdown("<h3 style='font-weight: 350; font-size: 34px;'>Levar inteligência para o campo com compromisso com o resultado.</h3>", unsafe_allow_html=True)
 
-    st.markdown("## Valores")
-    st.write("Inovação, Comprometimento, Sustentabilidade, Ética, Resultado.")
+    # Visão
+    st.markdown("<h2>👀 Visão</h2>", unsafe_allow_html=True)
+    st.markdown("<h3 style='font-weight: 350; font-size: 34px;'>Ser referência nacional em tecnologia aplicada ao agronegócio.</h3>", unsafe_allow_html=True)
 
-    st.markdown("## Experiência")
-    st.write("Mais de 15 anos levando tecnologia ao campo brasileiro.")
+    # Valores
+    st.markdown("<h2>🧭 Valores</h2>", unsafe_allow_html=True)
+    st.markdown("<h3 style='font-weight: 350; font-size: 34px;'>Inovação, Comprometimento, Sustentabilidade, Ética e Resultado.</h3>", unsafe_allow_html=True)
+
+   #  Experiência
+    st.markdown("<h2>🧭 Experiência</h2>", unsafe_allow_html=True)
+    st.markdown("<h3 style='font-weight: 350; font-size: 34px;'>Mais de 15 anos levando tecnologia ao campo brasileiro.</h3>", unsafe_allow_html=True)
+
