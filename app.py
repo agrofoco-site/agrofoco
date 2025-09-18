@@ -1,47 +1,69 @@
-# app_sem_login.py
+# app.py
 # -*- coding: utf-8 -*-
 import streamlit as st
+import importlib
 from PIL import Image
-from estilos import set_page_title   # ✅ sem subpasta
+import home  # carrega a tela pública
+from estilos import set_page_title
 
-
-# ─── Título da página ──────────────────────────────────────────────
+# ─── CONFIGURAÇÃO DA PÁGINA ─────────────────────────────────────
 set_page_title("AgroFoco - Simuladores")
 
-# ─── Logo direto da raiz ───────────────────────────────────────────
+# ─── LOGO NA SIDEBAR ───────────────────────────────────────────
 logo = Image.open("logo.png")
-st.sidebar.image(logo, width=150)
+st.sidebar.image(logo, use_container_width=True)
 
-# ─── Menu lateral ──────────────────────────────────────────────────
-menu = st.sidebar.radio(
-    "MENU", [
-        "AgroFoco",
-        "Cálculo - Aloj. a Menor",
-        "Cálculo - Peso a Menor",
-        "Cálculo - Acerto de RIPI's",
-        "Cálculo - Mortalidade",
-        "Cálculo - Viabilidade Econômica",
-        "Cálculo - Desempenho Geral"
-    ],
-    key="main_menu"
-)
+# ─── INICIALIZA LOGIN NA SESSION ───────────────────────────────
+if "logado" not in st.session_state:
+    st.session_state.logado = False
 
-# ─── Importa o módulo correto conforme a escolha ──────────────────
-if menu == "AgroFoco":
-    import home as modulo
-elif menu == "Cálculo - Aloj. a Menor":
-    import simulador_alojamento_menor as modulo
-elif menu == "Cálculo - Peso a Menor":
-    import simulador_peso_menor as modulo
-elif menu == "Cálculo - Acerto de RIPI's":
-    import simulador_ripi as modulo
-elif menu == "Cálculo - Mortalidade":
-    import simulador_mortalidade as modulo
-elif menu == "Cálculo - Viabilidade Econômica":
-    import simulador_viabilidade as modulo
-elif menu == "Cálculo - Desempenho Geral":
-    import simulador_desempenho as modulo
+# ─── SE NÃO ESTIVER LOGADO: MOSTRA HOME + LOGIN ───────────────
+if not st.session_state.logado:
+    with st.sidebar:
+        st.subheader("🔐 ACESSO RESTRITO")
+        usuario = st.text_input("USUÁRIO")
+        senha = st.text_input("SENHA", type="password")
+        if st.button("ENTRAR"):
+            # ⚠️ LOGIN SIMPLES - SUBSTITUA POR LÓGICA REAL DEPOIS
+            if usuario == "admin" and senha == "6881":
+                st.session_state.logado = True
+                st.success("✅ Login realizado com sucesso!")
+                st.rerun()
+            else:
+                st.error("❌ Usuário ou senha incorretos.")
 
-# ─── Executa o app da página selecionada ──────────────────────────
+    # Carrega a tela pública
+    home.app()
+    st.stop()
+
+# ─── SE ESTIVER LOGADO: MOSTRA MENU DE SIMULADORES ────────────
+st.sidebar.markdown("---")
+opcao = st.sidebar.radio("📊 Simuladores Disponíveis", [
+    "Cálculo - Alojamento a Menor",
+    "Cálculo - Peso a Menor",
+    "Cálculo - Acerto de RIPI's",
+    "Cálculo - Mortalidade",
+    "Cálculo - Viabilidade Econômica",
+    "Cálculo - Desempenho Geral",
+    "🔓 Sair"
+])
+
+# ─── SAIR DO SISTEMA ───────────────────────────────────────────
+if opcao == "🔓 Sair":
+    st.session_state.logado = False
+    st.rerun()
+
+# ─── MAPEAMENTO DE MÓDULOS (importação dinâmica) ───────────────
+modulos = {
+    "Cálculo - Alojamento a Menor": "simulador_alojamento_menor",
+    "Cálculo - Peso a Menor": "simulador_peso_menor",
+    "Cálculo - Acerto de RIPI's": "simulador_ripi",
+    "Cálculo - Mortalidade": "simulador_mortalidade",
+    "Cálculo - Viabilidade Econômica": "simulador_viabilidade",
+    "Cálculo - Desempenho Geral": "simulador_desempenho",
+}
+
+# ─── IMPORTA E EXECUTA O MÓDULO ESCOLHIDO ──────────────────────
+modulo = importlib.import_module(modulos[opcao])
 modulo.app()
 
