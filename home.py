@@ -41,9 +41,9 @@ def app():
         }}
 
         .block-container {{
-            padding-top: 1rem;
-            padding-left: 2rem;
-            padding-right: 2rem;
+            padding-top: 0rem;
+            padding-left: 0rem;
+            padding-right: 0rem;
         }}
         </style>
         """,
