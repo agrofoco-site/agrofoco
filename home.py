@@ -55,23 +55,23 @@ def app():
 
     # SOBRE NÓS com ícone
     # Missão
-    st.markdown("<h2>🏢 Sobre Nós</h2>", unsafe_allow_html=True)
+    st.markdown("<h2>🏢 SOBRE NÓS</h2>", unsafe_allow_html=True)
     st.markdown("<h3 style='font-weight: 400; font-size: 34px;'>A AgroFoco oferece soluções gerenciais sob medida, promovendo eficiência, sustentabilidade e o fortalecimento da cadeia produtiva.</h3>", unsafe_allow_html=True)
   
 
     # Missão
-    st.markdown("<h2>🎯 Missão</h2>", unsafe_allow_html=True)
+    st.markdown("<h2>🎯 MISSÃO</h2>", unsafe_allow_html=True)
     st.markdown("<h3 style='font-weight: 400; font-size: 34px;'>Levar inteligência para o campo com compromisso com o resultado.</h3>", unsafe_allow_html=True)
 
     # Visão
-    st.markdown("<h2>👀 Visão</h2>", unsafe_allow_html=True)
+    st.markdown("<h2>👀 VISÃO</h2>", unsafe_allow_html=True)
     st.markdown("<h3 style='font-weight: 400; font-size: 34px;'>Ser referência nacional em tecnologia aplicada ao agronegócio.</h3>", unsafe_allow_html=True)
 
     # Valores
-    st.markdown("<h2>🧭 Valores</h2>", unsafe_allow_html=True)
+    st.markdown("<h2>🧭 VALORES</h2>", unsafe_allow_html=True)
     st.markdown("<h3 style='font-weight: 400; font-size: 34px;'>Inovação, Comprometimento, Sustentabilidade, Ética e Resultado.</h3>", unsafe_allow_html=True)
 
    #  Experiência
-    st.markdown("<h2>🧭 Experiência</h2>", unsafe_allow_html=True)
+    st.markdown("<h2>🧭 EXPERIÊNCIA</h2>", unsafe_allow_html=True)
     st.markdown("<h3 style='font-weight: 400; font-size: 34px;'>Mais de 15 anos levando tecnologia ao campo brasileiro.</h3>", unsafe_allow_html=True)
 
