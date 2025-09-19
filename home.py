@@ -29,7 +29,7 @@ def app():
         }}
 
         h2 {{
-            font-size: 30px !important;
+            font-size: 28px !important;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }}
