@@ -30,18 +30,18 @@ def app():
 
         h2 {{
             font-size: 28px !important;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+            font-weight: 800;
+            margin-bottom: 0 rem;
         }}
 
         .material-icons {{
             vertical-align: middle;
-            font-size: 34px;
+            font-size: 30px;
             margin-right: 0.4rem;
         }}
 
         .block-container {{
-            padding-top: 4rem;
+            padding-top: 1rem;
             padding-left: 2rem;
             padding-right: 2rem;
         }}
