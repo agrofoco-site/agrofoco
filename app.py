@@ -28,33 +28,40 @@ def validar_usuario(usuario, senha):
         return bcrypt.checkpw(senha.encode(), senha_hash)
     return False
 
-
-# ─── CONFIGURAÇÃO DA PÁGINA ─────────────────────────────────────
+# ===============================
+# CONFIGURAÇÃO DA PÁGINA
+# ===============================
 set_page_title("AgroFoco - Simuladores")
 
-# ─── LOGO NA SIDEBAR ───────────────────────────────────────────
+# ===============================
+# LOGO NA SIDEBAR
+# ===============================
 try:
     logo = Image.open("logo.png")
     st.sidebar.image(logo, use_container_width=True)
 except FileNotFoundError:
     st.sidebar.warning("⚠️ Logo não encontrada (logo.png)")
 
-# ─── INICIALIZA LOGIN NA SESSION ───────────────────────────────
+# ===============================
+# INICIALIZA LOGIN NA SESSION
+# ===============================
 if "logado" not in st.session_state:
     st.session_state.logado = False
 
 if "usuario" not in st.session_state:
     st.session_state.usuario = ""
 
-# ─── SE NÃO ESTIVER LOGADO: MOSTRA HOME + LOGIN ───────────────
+# ===============================
+# ÁREA DE LOGIN
+# ===============================
 if not st.session_state.logado:
     with st.sidebar:
         st.subheader("🔐 ACESSO RESTRITO")
 
-        usuario = st.text_input("USUÁRIO")
-        senha = st.text_input("SENHA", type="password")
+        usuario = st.text_input("USUÁRIO", key="login_usuario")
+        senha = st.text_input("SENHA", type="password", key="login_senha")
 
-        if st.button("ENTRAR"):
+        if st.button("ENTRAR", key="btn_login"):
             if validar_usuario(usuario, senha):
                 st.session_state.logado = True
                 st.session_state.usuario = usuario
@@ -67,30 +74,41 @@ if not st.session_state.logado:
     home.app()
     st.stop()
 
-# ─── SE ESTIVER LOGADO: MOSTRA MENU DE SIMULADORES ────────────
+# ===============================
+# ÁREA LOGADA
+# ===============================
 st.sidebar.success("✅ Você está logado!")
 st.sidebar.write(f"Usuário: **{st.session_state.usuario}**")
 
 st.sidebar.markdown("---")
-opcao = st.sidebar.radio("📊 Simuladores Disponíveis", [
-    "Cadastro Simples",  # ⬅️ Substituição aqui
-    "Cálculo - Peso a Menor",
-    "Cálculo - Alojamento a Menor",
-    "Cálculo - Acerto de RIPI's",
-    "Cálculo - Mortalidade",
-    "Cálculo - Desempenho Geral",
-    "🔓 Sair"
-])
 
-# ─── SAIR DO SISTEMA ───────────────────────────────────────────
+opcao = st.sidebar.radio(
+    "📊 Simuladores Disponíveis",
+    [
+        "Cadastro Simples",
+        "Cálculo - Peso a Menor",
+        "Cálculo - Alojamento a Menor",
+        "Cálculo - Acerto de RIPI's",
+        "Cálculo - Mortalidade",
+        "Cálculo - Desempenho Geral",
+        "🔓 Sair"
+    ],
+    key="menu_simuladores"
+)
+
+# ===============================
+# SAIR DO SISTEMA
+# ===============================
 if opcao == "🔓 Sair":
     st.session_state.logado = False
     st.session_state.usuario = ""
     st.rerun()
 else:
-    # ─── MAPEAMENTO DE MÓDULOS ───────────────────────────────
+    # ===============================
+    # MAPEAMENTO DE MÓDULOS
+    # ===============================
     modulos = {
-        "Cadastro Simples": "cadastro_simples",  # ⬅️ Novo módulo 
+        "Cadastro Simples": "cadastro_simples",
         "Cálculo - Peso a Menor": "simulador_peso_menor",
         "Cálculo - Alojamento a Menor": "simulador_alojamento_menor",
         "Cálculo - Acerto de RIPI's": "simulador_ripi",
@@ -98,6 +116,8 @@ else:
         "Cálculo - Desempenho Geral": "simulador_desempenho",
     }
 
-    # ─── IMPORTA E EXECUTA MÓDULO ─────────────────────────────
+    # ===============================
+    # IMPORTA E EXECUTA MÓDULO
+    # ===============================
     modulo = importlib.import_module(modulos[opcao])
     modulo.app()
