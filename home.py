@@ -56,7 +56,7 @@ def app():
     # SOBRE NÓS com ícone
     # Missão
     st.markdown("<h2>🏢 Sobre Nós</h2>", unsafe_allow_html=True)
-    st.markdown("<h3 style='font-weight: 300; font-size: 34px;'>A AgroFoco oferece soluções gerenciais personalizadas para associações e produtores integrados, com foco em eficiência, sustentabilidade e fortalecimento da cadeia produtiva.</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='font-weight: 300; font-size: 34px;'>A AgroFoco oferece soluções gerenciais sob medida, promovendo eficiência, sustentabilidade e o fortalecimento da cadeia produtiva.</h3>", unsafe_allow_html=True)
   
 
     # Missão
