@@ -1,3 +1,0 @@
-admin:6881
-antonio:818060
-jean:123456
