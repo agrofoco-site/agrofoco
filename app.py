@@ -1,5 +1,3 @@
-# app.py
-
 import streamlit as st
 import importlib
 from PIL import Image
@@ -43,11 +41,10 @@ except FileNotFoundError:
     st.sidebar.warning("⚠️ Logo não encontrada (logo.png)")
 
 # ===============================
-# INICIALIZA LOGIN NA SESSION
+# INICIALIZA SESSION STATE
 # ===============================
 if "logado" not in st.session_state:
     st.session_state.logado = False
-
 if "usuario" not in st.session_state:
     st.session_state.usuario = ""
 
@@ -65,7 +62,7 @@ if not st.session_state.logado:
             if validar_usuario(usuario, senha):
                 st.session_state.logado = True
                 st.session_state.usuario = usuario
-                st.rerun()
+                st.success("✅ Login realizado com sucesso!")
             else:
                 st.error("❌ Usuário ou senha incorretos.")
 
@@ -102,7 +99,7 @@ opcao = st.sidebar.radio(
 if opcao == "🔓 Sair":
     st.session_state.logado = False
     st.session_state.usuario = ""
-    st.rerun()
+    st.experimental_rerun()
 else:
     # ===============================
     # MAPEAMENTO DE MÓDULOS
