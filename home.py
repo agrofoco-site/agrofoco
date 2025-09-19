@@ -42,7 +42,7 @@ def app():
 
         .block-container {{
             padding-top: 0 rem;
-            padding-left: 1.5rem;
+            padding-left: 1.3rem;
             padding-right: 0rem;
         }}
         </style>
