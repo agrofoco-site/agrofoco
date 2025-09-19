@@ -65,13 +65,13 @@ def app():
 
     # Visão
     st.markdown("<h2>👀 Visão</h2>", unsafe_allow_html=True)
-    st.markdown("<h2 style='font-weight: 300; font-size: 34px;'>Ser referência nacional em tecnologia aplicada ao agronegócio.</h2>", unsafe_allow_html=True)
+    st.markdown("<h3 style='font-weight: 300; font-size: 34px;'>Ser referência nacional em tecnologia aplicada ao agronegócio.</h3>", unsafe_allow_html=True)
 
     # Valores
     st.markdown("<h2>🧭 Valores</h2>", unsafe_allow_html=True)
-    st.markdown("<h2 style='font-weight: 300; font-size: 34px;'>Inovação, Comprometimento, Sustentabilidade, Ética e Resultado.</h2>", unsafe_allow_html=True)
+    st.markdown("<h3 style='font-weight: 300; font-size: 34px;'>Inovação, Comprometimento, Sustentabilidade, Ética e Resultado.</h3>", unsafe_allow_html=True)
 
    #  Experiência
     st.markdown("<h2>🧭 Experiência</h2>", unsafe_allow_html=True)
-    st.markdown("<h2 style='font-weight: 300; font-size: 34px;'>Mais de 15 anos levando tecnologia ao campo brasileiro.</h2>", unsafe_allow_html=True)
+    st.markdown("<h3 style='font-weight: 300; font-size: 34px;'>Mais de 15 anos levando tecnologia ao campo brasileiro.</h3>", unsafe_allow_html=True)
 
