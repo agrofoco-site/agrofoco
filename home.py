@@ -69,9 +69,9 @@ def app():
 
     # Valores
     st.markdown("<h2>🧭 Valores</h2>", unsafe_allow_html=True)
-    st.markdown("<h3 style='font-weight: 300; font-size: 34px;'>Inovação, Comprometimento, Sustentabilidade, Ética e Resultado.</h3>", unsafe_allow_html=True)
+    st.markdown("<h4 style='font-weight: 500; font-size: 34px;'>Inovação, Comprometimento, Sustentabilidade, Ética e Resultado.</h4>", unsafe_allow_html=True)
 
    #  Experiência
     st.markdown("<h2>🧭 Experiência</h2>", unsafe_allow_html=True)
-    st.markdown("<h3 style='font-weight: 300; font-size: 34px;'>Mais de 15 anos levando tecnologia ao campo brasileiro.</h3>", unsafe_allow_html=True)
+    st.markdown("<h4 style='font-weight: 400; font-size: 34px;'>Mais de 15 anos levando tecnologia ao campo brasileiro.</h4>", unsafe_allow_html=True)
 
