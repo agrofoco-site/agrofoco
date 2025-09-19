@@ -41,8 +41,8 @@ def app():
         }}
 
         .block-container {{
-            padding-top: 0rem;
-            padding-left: 2rem;
+            padding-top: 0.3rem;
+            padding-left: 1.5rem;
             padding-right: 0rem;
         }}
         </style>
